@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lesson 10 Wǒ zài zhèr mǎi guāngpán - Teaching Notes</title>
+    <title>Lesson 10 Teaching Notes: Wǒ zài zhèr mǎi guāngpán</title>
     <!-- IMPORT STANDARD SCHOOLBOOK PINYIN FONT (Andika) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,14 +17,20 @@
             --accent-color: #059669;     /* Sage Green Accent */
             --accent-light: #A7F3D0;
             --card-bg: #FFFFFF;          
-            --border-color: #A7F3D0;     
+            --border-color: #A7F3D0;     /* Soft Mint Border */
             --text-main: #064E3B;        
             --text-sub: #475569;         
             --answer-blue: #0284C7;      
             --correct-green: #16A34A;    
             --error-red: #DC2626;        
-            --light-green: #ECFDF5;
-            
+            --light-green: #ECFDF5;     /* Card fill & soft highlight */
+
+            /* MONOCHROME SLATE PALETTE FOR SUPPLEMENTARY WORDS */
+            --supp-bg: #F9FAFB;
+            --supp-border: #9CA3AF;
+            --supp-header: #374151;
+            --supp-text: #111827;
+
             /* STANDARD PINYIN FONT STACK */
             --pinyin-font: 'Andika', 'Century Gothic', 'Comic Sans MS', sans-serif;
         }
@@ -39,9 +45,9 @@
             background-color: var(--bg-color); 
             color: var(--text-main); 
             display: flex; 
-            flex-direction: column;
-            min-height: 100vh;
-            line-height: 1.6;
+            flex-direction: column; 
+            min-height: 100vh; 
+            line-height: 1.6; 
         }
 
         /* TOP NAVIGATION BAR */
@@ -100,7 +106,6 @@
             font-weight: bold;
         }
 
-        /* FLEX BREAK TO FORCE BREAK ONWARDS TO NEXT ROW */
         .tab-break-line {
             flex-basis: 100%;
             height: 0;
@@ -121,20 +126,50 @@
         .content-header { margin-bottom: 1.8rem; padding-bottom: 0.6rem; border-bottom: 3px solid var(--border-color); }
         .content-header h2 { color: var(--primary-color); font-size: 2.1rem; }
 
-        /* CARDS & LARGE TEXT */
+        /* CARDS */
         .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 4px 10px rgba(6, 78, 59, 0.05); margin-bottom: 1.8rem; padding: 2rem; width: 100%; }
         .card-title { font-size: 1.4rem; font-weight: bold; color: var(--primary-color); margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 2px dashed var(--border-color); display: flex; align-items: center; justify-content: space-between; }
         .page-badge { background-color: #D1FAE5; color: #065F46; font-size: 0.85rem; padding: 3px 10px; border-radius: 12px; font-weight: bold; }
         .translation { display: inline; font-size: 1.05rem; color: var(--text-sub); font-weight: normal; margin-left: 8px; font-family: 'Helvetica Neue', Arial, sans-serif; }
 
-        /* TABLES & HIGHLIGHTS WITH STANDARD PINYIN FONT */
+        /* MAIN VOCABULARY TABLES */
         .vocab-table { width: 100%; border-collapse: collapse; margin-top: 0.8rem; font-size: 1.1rem; }
         .vocab-table th, .vocab-table td { text-align: left; padding: 0.9rem 0.8rem; border-bottom: 1px solid var(--border-color); vertical-align: middle; }
         .vocab-table th { background-color: var(--light-green); color: var(--primary-color); font-size: 0.95rem; text-transform: uppercase; border-bottom: 2px solid var(--border-color); }
         .vocab-num { font-weight: bold; color: var(--accent-color); width: 8%; }
-        .vocab-table td.vocab-pinyin-cell { width: 22%; font-weight: bold; color: var(--primary-color); font-size: 1.2rem; font-family: var(--pinyin-font) !important; }
+        .vocab-table td.vocab-pinyin-cell { width: 24%; font-weight: bold; color: var(--primary-color); font-size: 1.2rem; font-family: var(--pinyin-font) !important; }
         
-        .vocab-pinyin, .vocab-collo, .vocab-sent, .dlg-py, .qa-q, .qa-a, .correct-example, .error-example, .dlg-turn, .dlg-turn-ans {
+        /* MONOCHROME / GRAYSCALE TABLE STYLING FOR SUPPLEMENTARY WORDS */
+        .supp-section { margin-top: 2.2rem; }
+        .supp-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--supp-header);
+            margin-bottom: 0.8rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px dashed var(--supp-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .supp-badge {
+            background-color: var(--supp-header);
+            color: #FFFFFF;
+            font-size: 0.82rem;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+        .supp-table { width: 100%; border-collapse: collapse; margin-top: 0.6rem; font-size: 1.1rem; background-color: #FFFFFF; }
+        .supp-table th, .supp-table td { text-align: left; padding: 0.85rem 0.8rem; border-bottom: 1px solid #E5E7EB; vertical-align: middle; }
+        .supp-table th { background-color: #F3F4F6; color: var(--supp-header); font-size: 0.95rem; text-transform: uppercase; border-bottom: 2px solid var(--supp-border); }
+        .supp-num { font-weight: bold; color: #4B5563; width: 8%; }
+        .supp-table td.supp-pinyin-cell { width: 24%; font-weight: bold; color: var(--supp-text); font-size: 1.2rem; font-family: var(--pinyin-font) !important; }
+        .supp-collo { color: var(--text-sub); margin-bottom: 4px; font-size: 1.1rem; font-family: var(--pinyin-font) !important; }
+        .supp-target { font-weight: bold; color: #000000; background-color: #E5E7EB; padding: 1px 5px; border-radius: 4px; }
+        .supp-sent { color: #1F2937; font-weight: 500; font-size: 1.15rem; font-family: var(--pinyin-font) !important; }
+
+        .vocab-pinyin, .vocab-collo, .vocab-sent, .dlg-py, .qa-q, .qa-a, .correct-example, .error-example, .dlg-turn, .dlg-turn-ans, .key-sent-py, .slot, .math-box {
             font-family: var(--pinyin-font) !important;
         }
 
@@ -144,7 +179,6 @@
         .vocab-sent { color: var(--primary-color); font-weight: 500; font-size: 1.15rem; }
         .vocab-note { color: var(--accent-color); font-size: 1rem; font-weight: 500; margin-top: 6px; font-family: 'Helvetica Neue', Arial, sans-serif; }
 
-        /* NEW VOCAB HIGHLIGHT IN TEXTS */
         .hl { font-weight: bold; color: #047857; background-color: #D1FAE5; padding: 2px 6px; border-radius: 4px; border-bottom: 2px solid #A7F3D0; }
 
         /* RULES & VISUAL GRAMMAR SLOTS */
@@ -153,33 +187,10 @@
         .correct-example { color: var(--correct-green); font-weight: bold; font-size: 1.2rem; }
         .error-example { color: var(--error-red); font-weight: bold; text-decoration: line-through; font-size: 1.2rem; }
         
-        /* VISUAL SENTENCE BUILDER SLOTS */
-        .builder-wrapper {
-            margin: 12px 0;
-            padding-bottom: 8px;
-            border-bottom: 1px dashed var(--border-color);
-        }
-        .builder-wrapper:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-        .sentence-builder {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            align-items: center;
-            margin: 6px 0;
-            font-family: var(--pinyin-font);
-            width: 100%;
-        }
-        .slot {
-            padding: 8px 14px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.15rem;
-            text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
-        }
+        .builder-wrapper { margin: 12px 0; padding-bottom: 8px; border-bottom: 1px dashed var(--border-color); width: 100%; }
+        .builder-wrapper:last-child { border-bottom: none; padding-bottom: 0; }
+        .sentence-builder { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 6px 0; font-family: var(--pinyin-font); width: 100%; }
+        .slot { padding: 8px 14px; border-radius: 8px; font-weight: bold; font-size: 1.15rem; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.03); }
         .slot-subj { background-color: #E2E8F0; color: #1E293B; border: 1.5px solid #CBD5E1; }
         .slot-time { background-color: #E0F2FE; color: #0369A1; border: 1.5px solid #7DD3FC; }
         .slot-prep { background-color: #FEF3C7; color: #92400E; border: 1.5px solid #F59E0B; }
@@ -187,17 +198,9 @@
         .slot-obj  { background-color: #ECFDF5; color: #047857; border: 1.5px solid #A7F3D0; }
         .slot-label { font-size: 0.72rem; display: block; font-weight: normal; color: #64748B; margin-bottom: 2px; text-transform: uppercase; }
 
-        .math-box {
-            background-color: #FFFFFF;
-            border: 2px dashed var(--primary-color);
-            border-radius: 10px;
-            padding: 1rem 1.5rem;
-            margin: 10px 0;
-            display: inline-block;
-            font-family: var(--pinyin-font);
-        }
+        .math-box { background-color: #FFFFFF; border: 2px dashed var(--primary-color); border-radius: 10px; padding: 1rem 1.5rem; margin: 10px 0; display: inline-block; font-family: var(--pinyin-font); }
 
-        /* INTERACTIVE CLICK-TO-REVEAL DIALOGUES & KEY SENTENCES */
+        /* INTERACTIVE DIALOGUES & CARDS */
         .click-hint { background-color: #D1FAE5; color: #065F46; padding: 0.8rem 1.2rem; border-radius: 8px; margin-bottom: 1.5rem; font-weight: bold; display: flex; align-items: center; gap: 8px; font-size: 1.1rem;}
         
         .interactive-dlg {
@@ -214,31 +217,12 @@
             border-bottom: 1px solid var(--border-color);
             width: 100%;
         }
-        
-        .interactive-dlg:hover {
-            background-color: var(--light-green);
-            transform: translateX(4px);
-        }
-        
-        .dlg-eng {
-            font-size: 1.2rem;
-            color: #334155;
-            font-weight: 500;
-        }
-        
-        .dlg-py {
-            display: none; 
-            font-size: 1.4rem;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px dashed #A7F3D0;
-            line-height: 1.7;
-        }
-        
+        .interactive-dlg:hover { background-color: var(--light-green); transform: translateX(4px); }
+        .dlg-eng { font-size: 1.2rem; color: #334155; font-weight: 500; }
+        .dlg-py { display: none; font-size: 1.4rem; margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed #A7F3D0; line-height: 1.7; }
         .interactive-dlg.revealed .dlg-py { display: block; animation: fadeIn 0.3s ease-in-out; }
         .interactive-dlg.revealed .dlg-eng { color: #64748B; font-size: 1.05rem; }
         
-        /* INTERACTIVE KEY SENTENCES */
         .key-sent-card {
             background-color: #FFFFFF;
             border-left: 6px solid var(--primary-color);
@@ -252,24 +236,9 @@
             border-bottom: 1px solid var(--border-color);
             width: 100%;
         }
-        .key-sent-card:hover {
-            background-color: var(--light-green);
-            transform: translateX(4px);
-        }
-        .key-sent-py {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            font-family: var(--pinyin-font);
-        }
-        .key-sent-eng {
-            display: none;
-            margin-top: 0.6rem;
-            padding-top: 0.6rem;
-            border-top: 1px dashed #A7F3D0;
-            font-size: 1.1rem;
-            color: #334155;
-        }
+        .key-sent-card:hover { background-color: var(--light-green); transform: translateX(4px); }
+        .key-sent-py { font-size: 1.25rem; font-weight: bold; color: var(--primary-color); }
+        .key-sent-eng { display: none; margin-top: 0.6rem; padding-top: 0.6rem; border-top: 1px dashed #A7F3D0; font-size: 1.1rem; color: #334155; }
         .key-sent-card.revealed .key-sent-eng { display: block; animation: fadeIn 0.3s ease-in-out; }
 
         .speaker { font-weight: bold; color: var(--primary-color); }
@@ -282,8 +251,6 @@
         .break-card { background-color: var(--primary-color); color: white; text-align: center; padding: 4rem 2rem; border-radius: 16px; border-top: 8px solid var(--accent-color); margin-top:2rem; width: 100%;}
         .break-card h2 { font-size: 3rem; margin-bottom: 1.2rem; }
         .break-card p { font-size: 1.4rem; color: #A7F3D0; }
-
-        .nowrap-line { white-space: nowrap !important; }
 
         @media (max-width: 850px) {
             .nav-header { flex-direction: column; align-items: flex-start; gap: 8px; padding: 1rem; }
@@ -301,43 +268,42 @@
             <p>Teaching Notes</p>
         </div>
         <div class="nav-tabs">
-            <button class="tab-btn active" onclick="openTab(event, 'nav-0')">📌 Agenda</button>
-            <button class="tab-btn" onclick="openTab(event, 'nav-1')">🏢 Places & Actions</button>
-            <button class="tab-btn" onclick="openTab(event, 'nav-2')">🎵 Hobbies & Frequency</button>
-            <button class="tab-btn" onclick="openTab(event, 'nav-3')">👥 Accompanying People</button>
-            <button class="tab-btn" onclick="openTab(event, 'nav-4')">💬 Text 1</button>
+            <button class="tab-btn active" onclick="showTab('agenda')">📌 Agenda</button>
+            <button class="tab-btn" onclick="showTab('places')">🏢 Places &amp; Actions</button>
+            <button class="tab-btn" onclick="showTab('hobbies')">🎵 Hobbies &amp; Frequency</button>
+            <button class="tab-btn" onclick="showTab('accompany')">👥 Accompanying People</button>
+            <button class="tab-btn" onclick="showTab('text1')">💬 Text 1</button>
             
-            <!-- LINE BREAK TO PUSH BREAK ONWARDS TO NEXT ROW -->
             <div class="tab-break-line"></div>
             
-            <button class="tab-btn" onclick="openTab(event, 'tab-break')">☕ Break</button>
-            <button class="tab-btn" onclick="openTab(event, 'nav-6')">🍎 Shopping for Fruits</button>
-            <button class="tab-btn" onclick="openTab(event, 'nav-7')">💵 Money & Prices</button>
-            <button class="tab-btn" onclick="openTab(event, 'nav-8')">🛍️ Shopping Interactions</button>
-            <button class="tab-btn" onclick="openTab(event, 'nav-9')">💬 Text 2</button>
-            <button class="tab-btn" onclick="openTab(event, 'nav-10')">📝 Homework</button>
+            <button class="tab-btn" onclick="showTab('break')">☕ Break</button>
+            <button class="tab-btn" onclick="showTab('fruits')">🍎 Shopping for Fruits</button>
+            <button class="tab-btn" onclick="showTab('money')">💵 Money &amp; Prices</button>
+            <button class="tab-btn" onclick="showTab('interactions')">🛍️ Shopping Interactions</button>
+            <button class="tab-btn" onclick="showTab('text2')">💬 Text 2</button>
+            <button class="tab-btn" onclick="showTab('wrapup')">📝 Homework</button>
         </div>
     </header>
 
     <main class="main-content">
 
         <!-- AGENDA & OVERVIEW -->
-        <section id="nav-0" class="tab-content active">
+        <section id="agenda" class="tab-content active">
             <div class="content-header">
                 <h2>Lesson 10: Wǒ zài zhèr mǎi guāngpán</h2>
             </div>
             
             <div class="card">
-                <div class="card-title">Course Roadmap & Textbook Coverage</div>
-                <div class="dlg-turn"><strong>Main Topics:</strong> Location & Actions, Expressing Likes/Dislikes, Frequency, Fruit Shopping, Chinese Currency, and Bargaining Interactions</div>
+                <div class="card-title">Course Roadmap &amp; Textbook Coverage</div>
+                <div class="dlg-turn"><strong>Main Topics:</strong> Location &amp; Actions, Expressing Likes/Dislikes, Frequency, Fruit Shopping, Chinese Currency, and Bargaining Interactions</div>
                 <div class="dlg-turn"><strong>Textbook Coverage:</strong> New Practical Chinese Reader 1, Lesson 10 (Pages 151 to 172)</div>
             </div>
 
             <div class="card">
                 <div class="card-title">Lesson Sections</div>
                 <div class="dlg-turn"><strong>1. Text 1:</strong> Likes and Dislikes (Pg 152–153)</div>
-                <div class="dlg-turn"><strong>2. Text 2:</strong> Solving Language Problems & Shopping (Pg 154–155)</div>
-                <div class="dlg-turn"><strong>3. Wrap-up:</strong> Key Sentence Review & Homework Assignment</div>
+                <div class="dlg-turn"><strong>2. Text 2:</strong> Solving Language Problems &amp; Shopping (Pg 154–158)</div>
+                <div class="dlg-turn"><strong>3. Wrap-up:</strong> Key Sentence Review &amp; Homework Assignment</div>
             </div>
 
             <div class="line-guide-box">
@@ -351,15 +317,15 @@
         </section>
 
         <!-- PLACES & ACTIONS -->
-        <section id="nav-1" class="tab-content">
+        <section id="places" class="tab-content">
             <div class="content-header">
-                <h2>Places & Actions (Pg 153, 164)</h2>
+                <h2>Places &amp; Actions (Pg 153, 164)</h2>
             </div>
 
             <div class="card">
-                <div class="card-title">Vocabulary: Places & Locations (Pg 153)</div>
+                <div class="card-title">Vocabulary: Places &amp; Locations (Pg 153)</div>
                 <table class="vocab-table">
-                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation & Special Notes</th></tr></thead>
+                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation &amp; Example Sentence</th></tr></thead>
                     <tbody>
                         <tr>
                             <td class="vocab-num">#1</td><td class="vocab-pinyin-cell">zài</td><td>at, in, on</td>
@@ -377,7 +343,6 @@
                 </table>
             </div>
 
-            <!-- VISUAL GRAMMAR BUILDER -->
             <div class="card">
                 <div class="card-title">Grammar: Prepositional Phrase with "zài" (Pg 164)</div>
                 <p style="font-size: 1.05rem; color: var(--text-sub); margin-bottom: 1rem;">Rule: Prepositional location phrase MUST be placed BEFORE the verb.</p>
@@ -435,15 +400,15 @@
         </section>
 
         <!-- HOBBIES & FREQUENCY -->
-        <section id="nav-2" class="tab-content">
+        <section id="hobbies" class="tab-content">
             <div class="content-header">
-                <h2>Hobbies & Frequency (Pg 153, 166)</h2>
+                <h2>Hobbies &amp; Frequency (Pg 153, 166)</h2>
             </div>
 
             <div class="card">
-                <div class="card-title">Vocabulary: Hobbies & Goods (Pg 153)</div>
+                <div class="card-title">Vocabulary: Hobbies &amp; Goods (Pg 153)</div>
                 <table class="vocab-table">
-                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation & Example Sentence</th></tr></thead>
+                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation &amp; Example Sentence</th></tr></thead>
                     <tbody>
                         <tr>
                             <td class="vocab-num">#2</td><td class="vocab-pinyin-cell">guāngpán 💿</td><td>CD</td>
@@ -473,20 +438,19 @@
                             <td><div class="vocab-collo">Collocation: mǎi <span class="collo-target">bàozhǐ</span> / kàn <span class="collo-target">bàozhǐ</span></div><div class="vocab-sent">Sentence: Zhèr yě méiyǒu bàozhǐ.</div></td>
                         </tr>
                         <tr>
-                            <td class="vocab-num">#10</td><td class="vocab-pinyin-cell">běnzi 📓</td><td>notebook</td>
+                            <td class="vocab-num">#10</td><td class="vocab-pinyin-cell">běnzi 📓</td><td>exercise book, notebook</td>
                             <td><div class="vocab-collo">Collocation: yí ge <span class="collo-target">běnzi</span> / mǎi <span class="collo-target">běnzi</span></div><div class="vocab-sent">Sentence: Wǒ yě mǎi běnzi.</div></td>
                         </tr>
                         <tr>
-                            <td class="vocab-num">#12</td><td class="vocab-pinyin-cell">Liáng Zhù</td><td>Butterfly Lovers</td>
+                            <td class="vocab-num">#12</td><td class="vocab-pinyin-cell">Liáng Zhù</td><td>Butterfly Lovers (violin concerto)</td>
                             <td><div class="vocab-collo">Collocation: shì <span class="collo-target">Liáng Zhù</span></div><div class="vocab-sent">Sentence: Zhè zhāng shì Liáng Zhù.</div></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
 
-            <!-- VISUAL GRAMMAR BREAKDOWN -->
             <div class="card">
-                <div class="card-title">Grammar & Culture Visual Notes</div>
+                <div class="card-title">Grammar &amp; Culture Visual Notes</div>
                 
                 <div class="rule-box">
                     <strong style="font-size: 1.15rem; color: var(--primary-color);">1. Frequency Adverbs Structure:</strong>
@@ -507,31 +471,28 @@
                     </div>
                 </div>
 
-                <!-- ADDED COMPARISON: zhè/nà/nǎ vs zhèr/nàr/nǎr -->
                 <div class="rule-box" style="margin-top: 1rem;">
                     <strong style="font-size: 1.15rem; color: var(--primary-color);">2. Demonstratives Comparison: Pronouns vs Place Words (+ "r")</strong>
                     
                     <div style="margin-top: 10px; display: flex; gap: 15px; flex-wrap: wrap; width: 100%;">
                         <div style="flex: 1; min-width: 280px; background: white; padding: 14px; border-radius: 8px; border-left: 5px solid var(--primary-color);">
                             <strong style="color: var(--primary-color); font-size: 1.1rem;">WITHOUT "r" ➔ Pronouns / Modifiers</strong>
-                            <p style="font-size: 0.95rem; color: var(--text-sub); margin-top: 4px;">Refers to things/people. Used with Measure Words:</p>
+                            <p style="font-size: 0.95rem; color: var(--text-sub); margin-top: 4px;">Refers to things/people. Requires Measure Word:</p>
                             <ul style="margin-left: 18px; margin-top: 6px; line-height: 1.8;" class="vocab-pinyin">
-                                <li><strong>zhè / zhège:</strong> this / this one <span class="translation">(e.g. zhè zhāng guāngpán - this CD)</span></li>
-                                <li><strong>nà / nàge:</strong> that / that one <span class="translation">(e.g. nàge lǎoshī - that teacher)</span></li>
-                                <li><strong>nǎ / nǎge:</strong> which / which one <span class="translation">(e.g. nǎge xuésheng? - which student?)</span></li>
+                                <li>zhè zhāng guāngpán <span class="translation">(this CD)</span></li>
+                                <li>nàge lǎoshī <span class="translation">(that teacher)</span></li>
+                                <li>nǎge xuésheng? <span class="translation">(which student?)</span></li>
                             </ul>
-                            <div style="margin-top: 10px; padding: 8px 12px; background-color: var(--light-green); border-radius: 6px; font-weight: bold;" class="vocab-pinyin">
-                                Formula: <span class="grammar-hl">zhè / nà / nǎ + Measure Word (+ Noun)</span>
-                            </div>
+                            <div style="margin-top: 8px; font-weight: bold;" class="grammar-hl">Formula: zhè / nà / nǎ + Measure Word (+ Noun)</div>
                         </div>
 
                         <div style="flex: 1; min-width: 280px; background: white; padding: 14px; border-radius: 8px; border-left: 5px solid var(--correct-green);">
                             <strong style="color: var(--correct-green); font-size: 1.1rem;">WITH "r" ➔ Location / Place Words!</strong>
                             <p style="font-size: 0.95rem; color: var(--text-sub); margin-top: 4px;">💡 Adding "r" transforms the word into a Place/Location:</p>
                             <ul style="margin-left: 18px; margin-top: 6px; line-height: 1.8;" class="vocab-pinyin">
-                                <li><strong>zhèr:</strong> here <span class="translation">(this place)</span> ➔ Wǒmen zài zhèr shàngkè. <span class="translation">(We have class here.)</span></li>
-                                <li><strong>nàr:</strong> there <span class="translation">(that place)</span> ➔ Tā qù nàr yóuyǒng. <span class="translation">(He goes there to swim.)</span></li>
-                                <li><strong>nǎr:</strong> where <span class="translation">(which place)</span> ➔ Nǐ xiànzài zài nǎr? <span class="translation">(Where are you now?)</span></li>
+                                <li>zhèr <span class="translation">(here)</span> ➔ Wǒmen zài zhèr shàngkè. <span class="translation">(We have class here.)</span></li>
+                                <li>nàr <span class="translation">(there)</span> ➔ Tā qù nàr yóuyǒng. <span class="translation">(He goes there to swim.)</span></li>
+                                <li>nǎr <span class="translation">(where)</span> ➔ Nǐ xiànzài zài nǎr? <span class="translation">(Where are you now?)</span></li>
                             </ul>
                         </div>
                     </div>
@@ -540,7 +501,7 @@
                 <div class="rule-box" style="margin-top: 1rem; background-color: var(--light-green); border-color: var(--border-color);">
                     <strong style="font-size: 1.15rem; color: var(--primary-color);">3. Culture Note: Liáng Zhù (The Butterfly Lovers / 梁祝)</strong>
                     <ul style="margin-top: 6px; margin-left: 20px; color: var(--text-main);">
-                        <li>Famous Chinese tragic love story (Liang Shanbo & Zhu Yingtai), often called the Chinese <em>Romeo and Juliet</em>.</li>
+                        <li>Famous Chinese tragic love story (Liang Shanbo &amp; Zhu Yingtai), often called the Chinese <em>Romeo and Juliet</em>.</li>
                         <li>Tragically separated in life, reunited as butterflies symbolizing eternal love.</li>
                         <li>A "Liáng Zhù" CD refers to the cherished Chinese violin concerto or opera recording.</li>
                         <li style="margin-top: 4px;">🎬 Video Reference: <a href="https://www.youtube.com/watch?v=6MiOTB-Kpzw" target="_blank" style="color: var(--accent-color); font-weight: bold; text-decoration: underline;">https://www.youtube.com/watch?v=6MiOTB-Kpzw</a></li>
@@ -550,7 +511,7 @@
         </section>
 
         <!-- ACCOMPANYING PEOPLE -->
-        <section id="nav-3" class="tab-content">
+        <section id="accompany" class="tab-content">
             <div class="content-header">
                 <h2>Accompanying People (Pg 153, 165)</h2>
             </div>
@@ -558,7 +519,7 @@
             <div class="card">
                 <div class="card-title">Vocabulary: Accompanying (Pg 153)</div>
                 <table class="vocab-table">
-                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation & Special Notes</th></tr></thead>
+                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation &amp; Special Notes</th></tr></thead>
                     <tbody>
                         <tr>
                             <td class="vocab-num">#5</td><td class="vocab-pinyin-cell">gēn</td><td>with; to follow</td>
@@ -585,10 +546,9 @@
                         </div>
                     </div>
 
-                    <strong style="font-size: 1.15rem; color: var(--primary-color);">Flexible Word Orders for Time & "gēn + Person" (Both are Correct!):</strong>
+                    <strong style="font-size: 1.15rem; color: var(--primary-color);">Flexible Word Orders for Time &amp; "gēn + Person" (Both are Correct!):</strong>
                     <p style="font-size: 0.95rem; color: var(--text-sub); margin-bottom: 8px;">Time can be placed either BEFORE or AFTER "gēn + Person":</p>
 
-                    <!-- PATTERN A -->
                     <div style="background: white; padding: 12px 16px; border-radius: 8px; margin-bottom: 12px;">
                         <strong style="color: var(--primary-color);">Pattern A: Subject + Time + gēn + Person + zài + Place + Verb + Object</strong>
                         <div class="sentence-builder" style="margin-top: 8px;">
@@ -601,7 +561,6 @@
                         <div class="translation">(I often watch movies at the cinema with my elder sister.)</div>
                     </div>
 
-                    <!-- PATTERN B -->
                     <div style="background: white; padding: 12px 16px; border-radius: 8px;">
                         <strong style="color: var(--accent-color);">Pattern B: Subject + gēn + Person + Time + zài + Place + Verb + Object</strong>
                         <div class="sentence-builder" style="margin-top: 8px;">
@@ -644,7 +603,7 @@
         </section>
 
         <!-- TEXT 1 -->
-        <section id="nav-4" class="tab-content">
+        <section id="text1" class="tab-content">
             <div class="content-header">
                 <h2>Text 1: Likes and Dislikes (Pg 152–153)</h2>
             </div>
@@ -714,26 +673,27 @@
         </section>
 
         <!-- MID-CLASS BREAK -->
-        <section id="tab-break" class="tab-content">
+        <section id="break" class="tab-content">
             <div class="content-header">
                 <h2>Mid-Class Break</h2>
             </div>
             <div class="break-card">
                 <h2>10 MINUTE BREAK</h2>
-                <p>Up next: Fruit Shopping, Chinese Money & Price Bargaining (Text 2)</p>
+                <p>Up next: Fruit Shopping, Chinese Money &amp; Price Bargaining (Text 2)</p>
             </div>
         </section>
 
         <!-- SHOPPING FOR FRUITS -->
-        <section id="nav-6" class="tab-content">
+        <section id="fruits" class="tab-content">
             <div class="content-header">
                 <h2>Shopping for Fruits (Pg 156, 158)</h2>
             </div>
 
+            <!-- MAIN VOCABULARY -->
             <div class="card">
-                <div class="card-title">Vocabulary: Fruits & Weight (Pg 156)</div>
+                <div class="card-title">Vocabulary: Fruits &amp; Weight (Pg 156)</div>
                 <table class="vocab-table">
-                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation & Example Sentence</th></tr></thead>
+                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation &amp; Example Sentence</th></tr></thead>
                     <tbody>
                         <tr>
                             <td class="vocab-num">#4</td><td class="vocab-pinyin-cell">xiāngjiāo 🍌<br>píngguǒ 🍎<br>xiāngjiāo píngguǒ</td><td>banana<br>apple<br>apple with the taste of a banana</td>
@@ -749,11 +709,44 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <!-- SUPPLEMENTARY VOCABULARY IN MONOCHROME -->
+                <div class="supp-section">
+                    <div class="supp-title">
+                        <span>Supplementary Words (Shopping Items &amp; Measures)</span>
+                        <span class="supp-badge">Textbook Pg 157</span>
+                    </div>
+                    <table class="supp-table">
+                        <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation &amp; Example Sentence</th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td class="supp-num">#13</td><td class="supp-pinyin-cell">bēi ☕</td><td>(a measure word for cups or glasses)</td>
+                                <td>
+                                    <div class="supp-collo">Collocation: yì <span class="supp-target">bēi</span> kāfēi / liǎng <span class="supp-target">bēi</span> chá</div>
+                                    <div class="supp-sent">Sentence: Wǒ yào yì bēi kāfēi.</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="supp-num">#14</td><td class="supp-pinyin-cell">dōngxi 🛍️</td><td>thing, stuff</td>
+                                <td>
+                                    <div class="supp-collo">Collocation: mǎi <span class="supp-target">dōngxi</span> / hěn duō <span class="supp-target">dōngxi</span></div>
+                                    <div class="supp-sent">Sentence: Shāngchǎng lǐ dōngxi hěn duō.</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="supp-num">#15</td><td class="supp-pinyin-cell">gōngfu 🥋</td><td>kung fu</td>
+                                <td>
+                                    <div class="supp-collo">Collocation: Zhōngguó <span class="supp-target">gōngfu</span> / xué <span class="supp-target">gōngfu</span></div>
+                                    <div class="supp-sent">Sentence: Tā dìdi xǐhuan Zhōngguó gōngfu.</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <!-- VISUAL MATH & GRAMMAR -->
             <div class="card">
-                <div class="card-title">Grammar & Math Breakdown: Weight & Asking Prices</div>
+                <div class="card-title">Grammar &amp; Math Breakdown: Weight &amp; Asking Prices</div>
                 
                 <div class="rule-box">
                     <strong style="font-size: 1.15rem; color: var(--primary-color);">1. Weight Unit "jīn" Math Conversion:</strong>
@@ -773,9 +766,8 @@
                     </div>
                 </div>
 
-                <!-- DIVERSE SENTENCE PATTERNS FOR ASKING / ANSWERING PRICES -->
                 <div class="rule-box" style="margin-top: 1rem;">
-                    <strong style="font-size: 1.15rem; color: var(--primary-color);">2. Sentence Patterns for Asking & Answering Prices:</strong>
+                    <strong style="font-size: 1.15rem; color: var(--primary-color);">2. Sentence Patterns for Asking &amp; Answering Prices:</strong>
                     <p style="font-size: 0.95rem; color: var(--text-sub); margin-bottom: 10px;">Word order is flexible in spoken Chinese, but the core meaning stays identical!</p>
                     
                     <div style="display: flex; gap: 15px; flex-wrap: wrap; width: 100%;">
@@ -820,30 +812,31 @@
         </section>
 
         <!-- MONEY & PRICES -->
-        <section id="nav-7" class="tab-content">
+        <section id="money" class="tab-content">
             <div class="content-header">
-                <h2>Money & Prices (Pg 156–158)</h2>
+                <h2>Money &amp; Prices (Pg 156–158)</h2>
             </div>
 
+            <!-- MAIN VOCABULARY -->
             <div class="card">
-                <div class="card-title">Vocabulary: Money Units & Price (Pg 156)</div>
+                <div class="card-title">Vocabulary: Money Units &amp; Price (Pg 156)</div>
                 <table class="vocab-table">
-                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation & Special Notes</th></tr></thead>
+                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation &amp; Special Notes</th></tr></thead>
                     <tbody>
                         <tr>
                             <td class="vocab-num">#10</td><td class="vocab-pinyin-cell">qián 💵</td><td>money</td>
                             <td><div class="vocab-collo">Collocation: duōshao <span class="collo-target">qián</span></div><div class="vocab-sent">Sentence: Yígòng shísì kuài qián.</div></td>
                         </tr>
                         <tr>
-                            <td class="vocab-num">#11</td><td class="vocab-pinyin-cell">kuài (qián)</td><td>yuan (basic unit)</td>
+                            <td class="vocab-num">#11</td><td class="vocab-pinyin-cell">kuài (qián)</td><td>yuan (basic unit, e.g. Ringgit)</td>
                             <td><div class="vocab-collo">Collocation: liǎng <span class="collo-target">kuài</span> qián / èrshí <span class="collo-target">kuài</span> qián</div><div class="vocab-sent">Sentence: Wǒ zhǎo nín liù kuài.</div></td>
                         </tr>
                         <tr>
-                            <td class="vocab-num">#12</td><td class="vocab-pinyin-cell">máo (qián)</td><td>jiao (1/10 yuan)</td>
+                            <td class="vocab-num">#12</td><td class="vocab-pinyin-cell">máo (qián)</td><td>jiao (1/10 yuan, e.g. 10 Sen)</td>
                             <td><div class="vocab-collo">Collocation: liǎng <span class="collo-target">máo</span> qián / liù <span class="collo-target">máo</span> wǔ</div><div class="vocab-sent">Sentence: Yì jīn sān kuài èr máo qián.</div></td>
                         </tr>
                         <tr>
-                            <td class="vocab-num">#15</td><td class="vocab-pinyin-cell">fēn (qián)</td><td>fen (1/100 yuan)</td>
+                            <td class="vocab-num">#15</td><td class="vocab-pinyin-cell">fēn (qián)</td><td>fen (1/100 yuan, e.g. 1 Sen)</td>
                             <td><div class="vocab-collo">Collocation: yì <span class="collo-target">fēn</span> qián / bā <span class="collo-target">fēn</span> qián</div><div class="vocab-sent">Sentence: Liǎng kuài qī máo wǔ fēn yì jīn.</div></td>
                         </tr>
                         <tr>
@@ -852,11 +845,72 @@
                         </tr>
                     </tbody>
                 </table>
+
+                <!-- SUPPLEMENTARY VOCABULARY IN MONOCHROME -->
+                <div class="supp-section">
+                    <div class="supp-title">
+                        <span>Supplementary Words (Prices, Merchandise &amp; Measures)</span>
+                        <span class="supp-badge">Textbook Pg 157</span>
+                    </div>
+                    <table class="supp-table">
+                        <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation &amp; Example Sentence</th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td class="supp-num">#6</td><td class="supp-pinyin-cell">piányi 🏷️</td><td>cheap, inexpensive</td>
+                                <td>
+                                    <div class="supp-collo">Collocation: hěn <span class="supp-target">piányi</span> / zhēn <span class="supp-target">piányi</span> / bú tài <span class="supp-target">piányi</span></div>
+                                    <div class="supp-sent">Sentence: Zhège běnzi hěn piányi.</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="supp-num">#7</td><td class="supp-pinyin-cell">běn 📘</td><td>(a measure word for books and notebooks)</td>
+                                <td>
+                                    <div class="supp-collo">Collocation: yì <span class="supp-target">běn</span> shū / liǎng <span class="supp-target">běn</span> běnzi</div>
+                                    <div class="supp-sent">Sentence: Wǒ yào mǎi yì běn Hànyǔ shū.</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="supp-num">#8</td><td class="supp-pinyin-cell">zhī 🖊️</td><td>(a measure word for stick-like things such as pens)</td>
+                                <td>
+                                    <div class="supp-collo">Collocation: yì <span class="supp-target">zhī</span> bǐ / sān <span class="supp-target">zhī</span> bǐ</div>
+                                    <div class="supp-sent">Sentence: Tā mǎi liǎng zhī bǐ.</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="supp-num">#9</td><td class="supp-pinyin-cell">bǐ ✏️</td><td>stick-like writing instrument, pen</td>
+                                <td>
+                                    <div class="supp-collo">Collocation: mǎi <span class="supp-target">bǐ</span> / sān zhī <span class="supp-target">bǐ</span></div>
+                                    <div class="supp-sent">Sentence: Zhè zhī bǐ hěn piányi.</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="supp-num">#10</td><td class="supp-pinyin-cell">fèn 📰</td><td>(a measure word for publications such as newspapers)</td>
+                                <td>
+                                    <div class="supp-collo">Collocation: yí <span class="supp-target">fèn</span> bàozhǐ / liǎng <span class="supp-target">fèn</span> bàozhǐ</div>
+                                    <div class="supp-sent">Sentence: Yí fèn bàozhǐ liǎng kuài liù máo qián.</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="supp-num">#11</td><td class="supp-pinyin-cell">yuán 💴</td><td>(same as kuài, but used in written Chinese)</td>
+                                <td>
+                                    <div class="supp-collo">Collocation: yībǎi <span class="supp-target">yuán</span> / shíwǔ <span class="supp-target">yuán</span></div>
+                                    <div class="supp-sent">Sentence: Yígòng yībǎi bāshí yuán.</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="supp-num">#12</td><td class="supp-pinyin-cell">mài 🛒</td><td>to sell</td>
+                                <td>
+                                    <div class="supp-collo">Collocation: <span class="supp-target">mài</span> guāngpán / bú <span class="supp-target">mài</span> shū</div>
+                                    <div class="supp-sent">Sentence: Zhège shāngchǎng bú mài bàozhǐ.</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <!-- SPOKEN CHINESE CURRENCY UNITS & OMISSIONS -->
             <div class="card">
-                <div class="card-title">Spoken Chinese Currency Structure & Omissions</div>
+                <div class="card-title">Spoken Chinese Currency Structure &amp; Omissions (Pg 158)</div>
                 
                 <div class="rule-box">
                     <strong style="font-size: 1.15rem; color: var(--primary-color);">1. Monetary Unit Structure:</strong>
@@ -920,15 +974,16 @@
         </section>
 
         <!-- SHOPPING INTERACTIONS -->
-        <section id="nav-8" class="tab-content">
+        <section id="interactions" class="tab-content">
             <div class="content-header">
                 <h2>Shopping Interactions (Pg 156, 165)</h2>
             </div>
 
+            <!-- MAIN VOCABULARY -->
             <div class="card">
                 <div class="card-title">Vocabulary: Interaction Words (Pg 156)</div>
                 <table class="vocab-table">
-                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation & Example Sentence</th></tr></thead>
+                    <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation &amp; Example Sentence</th></tr></thead>
                     <tbody>
                         <tr><td class="vocab-num">#1</td><td class="vocab-pinyin-cell">xiānsheng</td><td>Mr.; sir</td><td><div class="vocab-collo">Zhāng <span class="collo-target">xiānsheng</span></div><div class="vocab-sent">Xiānsheng, nín yào shénme?</div></td></tr>
                         <tr><td class="vocab-num">#2</td><td class="vocab-pinyin-cell">yào</td><td>to want</td><td><div class="vocab-collo"><span class="collo-target">yào</span> shénme</div><div class="vocab-sent">Nín hái yào shénme?</div></td></tr>
@@ -949,16 +1004,63 @@
                         <tr><td class="vocab-num">#18</td><td class="vocab-pinyin-cell">zhǎo (qián)</td><td>to give change</td><td><div class="vocab-collo"><span class="collo-target">zhǎo</span> nín liù kuài</div><div class="vocab-sent">Wǒ zhǎo nín liù kuài.</div></td></tr>
                     </tbody>
                 </table>
+
+                <!-- SUPPLEMENTARY VOCABULARY IN MONOCHROME -->
+                <div class="supp-section">
+                    <div class="supp-title">
+                        <span>Supplementary Words (People &amp; Places)</span>
+                        <span class="supp-badge">Textbook Pg 157</span>
+                    </div>
+                    <table class="supp-table">
+                        <thead><tr><th>#</th><th>Pinyin</th><th>Meaning</th><th>Collocation &amp; Example Sentence</th></tr></thead>
+                        <tbody>
+                            <tr>
+                                <td class="supp-num">#1</td><td class="supp-pinyin-cell">shòuhuòyuán 🧑‍💼</td><td>shop assistant, salesperson</td>
+                                <td>
+                                    <div class="supp-collo">Collocation: nàge <span class="supp-target">shòuhuòyuán</span> / shāngchǎng <span class="supp-target">shòuhuòyuán</span></div>
+                                    <div class="supp-sent">Sentence: Tā zài shāngchǎng zuò shòuhuòyuán.</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="supp-num">#2</td><td class="supp-pinyin-cell">zuòjiā ✍️</td><td>writer</td>
+                                <td>
+                                    <div class="supp-collo">Collocation: yǒumíng de <span class="supp-target">zuòjiā</span> / Zhōngguó <span class="supp-target">zuòjiā</span></div>
+                                    <div class="supp-sent">Sentence: Tā bàba shì yǒumíng de zuòjiā.</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="supp-num">#3</td><td class="supp-pinyin-cell">shūdiàn 📚</td><td>bookstore</td>
+                                <td>
+                                    <div class="supp-collo">Collocation: qù <span class="supp-target">shūdiàn</span> / zài <span class="supp-target">shūdiàn</span></div>
+                                    <div class="supp-sent">Sentence: Mǎ Dàwéi chángcháng qù shūdiàn.</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="supp-num">#4</td><td class="supp-pinyin-cell">tǐyùguǎn 🏋️</td><td>gym, gymnasium</td>
+                                <td>
+                                    <div class="supp-collo">Collocation: qù <span class="supp-target">tǐyùguǎn</span> / zài <span class="supp-target">tǐyùguǎn</span></div>
+                                    <div class="supp-sent">Sentence: Xīngqītiān wǒ gēn Mǎ Dàwéi qù tǐyùguǎn.</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="supp-num">#5</td><td class="supp-pinyin-cell">gōngyuán 🏞️</td><td>park</td>
+                                <td>
+                                    <div class="supp-collo">Collocation: qù <span class="supp-target">gōngyuán</span> / zài <span class="supp-target">gōngyuán</span></div>
+                                    <div class="supp-sent">Sentence: Wǒ gēn dìdi chángcháng qù gōngyuán.</div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <!-- VISUAL DOUBLE OBJECTS BUILDER -->
             <div class="card">
-                <div class="card-title">Grammar: Double Objects & Service Expressions</div>
+                <div class="card-title">Grammar: Double Objects &amp; Service Expressions</div>
                 
                 <div class="rule-box">
                     <strong style="font-size: 1.15rem; color: var(--primary-color);">1. Clarifying Intentions: <span class="grammar-hl">wǒ shì wèn...</span></strong>
                     <br>• Used to clarify what you mean or ask: (What I mean is... / I'm asking...)
-                    <br><span class="vocab-pinyin" style="color: var(--text-main); font-size: 1.05rem;">➔ Duìbuqǐ, wǒ shì wèn: Zhège Hànyǔ zěnme shuō?</span> <span class="translation">(Sorry, I'm asking: how do you say this in Chinese?)</span>
+                    <br><span class="vocab-pinyin" style="color: var(--text-main); font-size: 1.05rem;">➔ Duìbuqǐ, wǒ shì wèn: Zhège Hànyǔ zěnme shuō?</span>
                 </div>
 
                 <div class="rule-box" style="margin-top: 1rem;">
@@ -985,7 +1087,7 @@
                             <div class="slot slot-prep">nín</div>
                             <div class="slot slot-obj">yí ge píngguǒ.</div>
                         </div>
-                        <div class="translation">(I'll also give you one apple for free.)</div>
+                        <div class="translation">(I'll give you one apple for free.)</div>
                     </div>
 
                     <div class="builder-wrapper">
@@ -1012,9 +1114,9 @@
         </section>
 
         <!-- TEXT 2 -->
-        <section id="nav-9" class="tab-content">
+        <section id="text2" class="tab-content">
             <div class="content-header">
-                <h2>Text 2: Solving Language Problems & Shopping (Pg 154–155)</h2>
+                <h2>Text 2: Solving Language Problems &amp; Shopping (Pg 154–155)</h2>
             </div>
 
             <div class="click-hint">
@@ -1117,9 +1219,9 @@
         </section>
 
         <!-- WRAP-UP & HOMEWORK -->
-        <section id="nav-10" class="tab-content">
+        <section id="wrapup" class="tab-content">
             <div class="content-header">
-                <h2>Wrap-up & Homework</h2>
+                <h2>Wrap-up &amp; Homework</h2>
             </div>
 
             <div class="click-hint">
@@ -1185,23 +1287,35 @@
 
     <!-- TAB SWITCHING SCRIPT -->
     <script>
-        function openTab(evt, tabName) {
-            var i, tabcontent, tablinks;
-            
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].classList.remove("active");
+        function showTab(tabId) {
+            var contents = document.querySelectorAll('.tab-content');
+            for (var i = 0; i < contents.length; i++) {
+                contents[i].classList.remove('active');
             }
 
-            tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].classList.remove("active");
+            var buttons = document.querySelectorAll('.nav-tabs button, .tab-btn');
+            for (var j = 0; j < buttons.length; j++) {
+                buttons[j].classList.remove('active');
             }
 
-            document.getElementById(tabName).classList.add("active");
-            evt.currentTarget.classList.add("active");
+            var target = document.getElementById(tabId);
+            if (target) {
+                target.classList.add('active');
+            }
 
-            window.scrollTo({top: 0, behavior: 'smooth'});
+            for (var k = 0; k < buttons.length; k++) {
+                var attr = buttons[k].getAttribute('onclick') || '';
+                if (attr.indexOf("'" + tabId + "'") !== -1 || attr.indexOf('"' + tabId + '"') !== -1) {
+                    buttons[k].classList.add('active');
+                    break;
+                }
+            }
+
+            try {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            } catch (e) {
+                window.scrollTo(0, 0);
+            }
         }
     </script>
 </body>
